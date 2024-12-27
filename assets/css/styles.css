@@ -1,0 +1,477 @@
+:root {
+	/* Colors */
+	--purple-100: #dbd1fc;
+	--purple-500: #7551dc;
+
+	--yellow-100: #f9eee2;
+	--yellow-500: #ffcc6a;
+
+	--white: #ffffff;
+	--black: #121212;
+	--bg: #f6f5f6;
+
+	/* Text Preset 1 */
+	--text-preset-1-font-size: clamp(
+		2.875rem,
+		calc(2.875rem + ((1vw - 0.234375rem) * 1.5023)),
+		3.875rem
+	);
+	/* 62px */
+	--text-preset-1-line-height: 93.5%;
+	--text-preset-1-letter-spacing: -0.1875rem; /* -3px */
+	--text-preset-1-font-weight: 500; /* Medium weight */
+
+	/* Text Preset 2 */
+	--text-preset-2-font-size: clamp(
+		2rem,
+		calc(2rem + ((1vw - 0.234375rem) * 0.7512)),
+		2.5rem
+	); /* 40px */
+	--text-preset-2-line-height: 90%;
+	--text-preset-2-letter-spacing: -0.125rem; /* -2px */
+	--text-preset-2-font-weight: 500; /* Medium weight */
+
+	/* Text Preset 3 */
+	--text-preset-3-font-size: clamp(
+		1.625rem,
+		calc(1.625rem + ((1vw - 0.234375rem) * 0.5634)),
+		2rem
+	); /* 32px */
+	--text-preset-3-line-height: 87.5%;
+	--text-preset-3-letter-spacing: -0.125rem; /* -2px */
+	--text-preset-3-font-weight: 500; /* Medium weight */
+
+	/* Text Preset 4 */
+	--text-preset-4-font-size: 1.125rem; /* 18px */
+	--text-preset-4-line-height: 111%;
+	--text-preset-4-letter-spacing: 0rem; /* 0px */
+	--text-preset-4-font-weight: 400; /* Regular weight */
+
+	/* Font Families */
+	--primary-font: "DM Sans", sans-serif;
+}
+
+h1 {
+	font-size: var(--text-preset-1-font-size);
+	line-height: var(--text-preset-1-line-height);
+	letter-spacing: var(--text-preset-1-letter-spacing);
+	font-weight: var(--text-preset-1-font-weight);
+}
+h2 {
+	font-size: var(--text-preset-2-font-size);
+	line-height: var(--text-preset-2-line-height);
+	letter-spacing: var(--text-preset-2-letter-spacing);
+	font-weight: var(--text-preset-2-font-weight);
+}
+h3 {
+	font-size: var(--text-preset-3-font-size);
+	line-height: var(--text-preset-3-line-height);
+	letter-spacing: var(--text-preset-3-letter-spacing);
+	font-weight: var(--text-preset-3-font-weight);
+}
+p {
+	font-size: var(--text-preset-4-font-size);
+	line-height: var(--text-preset-4-line-height);
+	letter-spacing: var(--text-preset-4-letter-spacing);
+	font-weight: var(--text-preset-4-font-weight);
+}
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+	margin: 0;
+}
+
+body {
+	color: var(--black);
+	background-color: var(--bg);
+	font-family: var(--primary-font);
+	font-weight: 400;
+	/* 3. Add accessible line-height */
+	line-height: 1.5;
+	/* 4. Improve text rendering */
+	-webkit-font-smoothing: antialiased;
+}
+
+/* --------- CSS RESETS by https://www.joshwcomeau.com/css/custom-css-reset/ ----------- */
+/* 5. Improve media defaults */
+img {
+	max-width: 80%;
+	display: block;
+}
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+	text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: pretty;
+}
+
+/* ------------- Website styles ------------- */
+.bento_container {
+	max-width: 1120px;
+	margin-inline: auto;
+	padding-block: 1rem;
+	padding-inline: 1rem;
+	display: grid;
+	grid-template-areas:
+		"col2"
+		"col3"
+		"col4"
+		"col1";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	gap: 2rem;
+}
+
+.col--item {
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
+.col1 {
+	grid-area: col1;
+	display: grid;
+	gap: 2rem;
+
+	.col1--inner1 {
+		background-color: var(--yellow-100);
+		display: grid;
+		place-content: center;
+		padding: 2rem;
+
+		h2 {
+			margin-bottom: 24px;
+		}
+		h2 .quicker {
+			color: var(--purple-500);
+			font-style: italic;
+		}
+	}
+	.col1--inner2 {
+		padding: 1.5rem;
+		background-color: var(--yellow-500);
+		h2 {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.col2 {
+	grid-area: col2;
+	display: grid;
+	row-gap: 2rem;
+
+	.col2--inner1 {
+		display: grid;
+		place-items: center;
+		align-items: center;
+		padding-block: 2.5rem;
+		padding-inline: 2rem;
+		text-align: center;
+		color: var(--white);
+		background-color: var(--purple-500);
+
+		h1 {
+			margin-bottom: 1.5rem;
+			max-width: 10ch;
+		}
+		img {
+			width: 192px;
+		}
+		.times {
+			color: var(--yellow-500);
+		}
+		.italic {
+			font-style: italic;
+		}
+	}
+
+	.col2--inner2 {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 2rem;
+
+		.manage {
+			background-color: var(--white);
+		}
+
+		.posting {
+			position: relative;
+			overflow: hidden;
+			background-color: var(--yellow-500);
+
+			img {
+				position: relative;
+				bottom: -2.5rem;
+			}
+		}
+	}
+}
+
+.col3 {
+	background-color: var(--purple-100);
+	grid-area: col3;
+	display: grid;
+	place-items: center;
+	text-align: center;
+	gap: 1.5rem;
+
+	padding-block: 2rem;
+	padding-inline: 1.063rem;
+}
+
+.col4 {
+	grid-area: col4;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+
+	.col4--inner1 {
+		padding: 1.5rem;
+		display: grid;
+		gap: 1.5rem;
+		background-color: var(--white);
+		h1 {
+			margin-bottom: 0.938rem;
+		}
+		img {
+			max-width: 50%;
+		}
+	}
+	.col4--inner2 {
+		background-color: var(--purple-500);
+		color: var(--white);
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2.5rem;
+		place-items: center;
+		text-align: center;
+
+		h2 {
+			max-width: 10ch;
+		}
+	}
+}
+
+.col4 > :nth-child(1) {
+	order: 2;
+}
+
+/* ------ Media Query */
+@media (min-width: 768px) {
+	.col--item {
+		padding: 1.5rem;
+	}
+	.bento_container {
+		padding-inline: 40px;
+		grid-template-areas:
+			"col2 col2"
+			"col3 col3"
+			"col4 col4"
+			"col1 col1";
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+	}
+	.col1 {
+		grid-template-columns: 1fr 1fr;
+
+		.col1--inner1 {
+			padding-inline: 24px;
+			padding-block: 75px;
+
+			img {
+				width: 190px;
+			}
+		}
+	}
+	.col2 {
+		.col2--inner2 {
+			grid-template-columns: 1fr 1fr;
+
+			.posting img {
+				bottom: -1.56rem;
+			}
+		}
+		.col2--inner2 .manage {
+			display: grid;
+			place-content: space-between;
+			gap: 1rem;
+			h3 {
+				max-width: 13ch;
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+	.col3 {
+		img {
+			max-width: 60%;
+		}
+		p {
+			max-width: 28ch;
+		}
+	}
+	.col4 {
+		.col4--inner1 {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			img {
+				max-width: 30%;
+			}
+		}
+		.col4--inner2 {
+			grid-template-columns: 1fr 1fr;
+			gap: 0;
+			align-content: center;
+			place-items: center;
+			text-align: left;
+
+			h2 {
+				max-width: 10ch;
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.bento_container {
+		margin-block: auto;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"col1 col2 col3"
+			"col1 col2 col3"
+			"col1 col4 col4";
+		gap: 2rem;
+	}
+	.col1 {
+		grid-template-columns: 1fr;
+
+		.col1--inner2 {
+			h2 {
+				margin-bottom: 3.438rem;
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+	.col2 {
+		.col2--inner2 {
+			grid-template-columns: 1fr 1fr;
+
+			.posting img {
+				bottom: -1.56rem;
+			}
+		}
+		.col2--inner2 .manage {
+			gap: 0;
+			padding: 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			h3 {
+				max-width: 13ch;
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+
+	.col4 {
+		grid-template-columns: 0.92fr 2fr;
+		grid-template-rows: 13rem;
+		gap: 2rem;
+
+		.col4--inner1 {
+			background-color: var(--white);
+		}
+		.col4--inner2 {
+			background-color: var(--purple-500);
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
+
+@media (min-width: 1440px) {
+	.col2 {
+		gap: 0;
+		.col2--inner2 {
+			place-content: end;
+			grid-template-rows: 14rem;
+			.manage img {
+				margin-bottom: 1rem;
+			}
+			.posting img {
+				bottom: -1.56rem;
+			}
+		}
+	}
+	.col3 {
+		gap: 1rem;
+		place-items: start;
+		text-align: left;
+		padding-bottom: 0;
+		grid-template-rows: repeat(3, max-content);
+		overflow: hidden;
+
+		p {
+			max-width: 20ch;
+		}
+		h3 {
+			max-width: 10ch;
+		}
+
+		img {
+			place-self: center;
+			position: relative;
+			right: -0.1rem;
+
+			max-width: none;
+			width: 22.313rem;
+		}
+	}
+	.col4 {
+		place-content: end;
+
+		.col4--inner1 {
+			padding-block: 0.9rem;
+			padding-inline: 0;
+			flex-direction: column;
+			img {
+				max-width: 65%;
+			}
+		}
+	}
+	.col4 > :nth-child(2) {
+		order: 2;
+	}
+}
